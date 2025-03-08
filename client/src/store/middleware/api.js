@@ -78,7 +78,7 @@ const api =
       if (fieldId) dispatch(setLoader(fieldId));
 
       const response = await axios.request({
-        baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/back`,
+        baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/`,
         url,
         method,
         data,
