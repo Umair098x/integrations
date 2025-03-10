@@ -173,8 +173,13 @@ const Admin = () => {
         })}
       </div>
 
-      <div>
-        <button onClick={openGoogleAuthPopup}>Sign In with Google Drive</button>
+      <div className="p-4 d-flex">
+        <button
+          className="simple-button w-auto rounded"
+          onClick={openGoogleAuthPopup}
+        >
+          Sign In with Google Drive
+        </button>
       </div>
     </>
   );

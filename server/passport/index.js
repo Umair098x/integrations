@@ -54,15 +54,15 @@ passport.use(
     (req, accessToken, refreshToken, params, profile, cb) => {
       // Retrieve and parse the state parameter from the query string
       const { user_id, app_id } = JSON.parse(req.query.state || "{}");
-      console.log({ user_id, app_id });
 
-      // Use these values in your database query
+      const userIdInt = parseInt(user_id);
+
       const query = `
         INSERT INTO User_Applications (user_id, app_id, access_token, refresh_token, token_expiry)
         VALUES (?, ?, ?, ?, ?)
       `;
       const values = [
-        user_id,
+        userIdInt,
         app_id,
         accessToken,
         refreshToken,
